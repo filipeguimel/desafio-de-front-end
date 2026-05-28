@@ -116,8 +116,12 @@ export default function WeatherClient({ initialWeather }: { initialWeather?: Wea
         : weatherIconMap[conditionCode]?.iconHot;
   }
 
-  const bgColor = temp <= 0 ? 'bg-gray' : 'bg-blue';
-  const iconColor = temp <= 0 ? 'text-dark' : 'text-white';
+  const SNOW_CODES = [1066, 1114, 1117, 1255, 1258, 1261, 1264];
+  const isSnowing = SNOW_CODES.includes(conditionCode);
+
+  const bgColor = (temp <= 0 || isSnowing) ? 'bg-gray' : 'bg-blue';
+  const iconColor = (temp <= 0 || isSnowing) ? 'text-dark' : 'text-white';
+  const textColor = (temp <= 0 || isSnowing) ? 'text-dark' : 'text-white';
 
   const hours = [3, 9, 15, 21];
   const hourPeriods = {
@@ -129,7 +133,7 @@ export default function WeatherClient({ initialWeather }: { initialWeather?: Wea
 
   return (
     <div 
-      className={`min-h-screen ${bgColor} flex items-start justify-center py-8 md:pt-37.5`}
+      className={`min-h-screen ${bgColor} ${textColor} flex items-start justify-center py-8 md:pt-37.5`}
       data-testid="weather-client-container"
     >
       <div className="flex-wrap rounded-xl text-center w-93.75 sm:w-135 md:w-128">
@@ -216,12 +220,12 @@ export default function WeatherClient({ initialWeather }: { initialWeather?: Wea
                   <span className='text-xl font-extralight'>{hourPeriods[hour as keyof typeof hourPeriods]}</span>
                   {HourIcon ? (
                     <HourIcon 
-                      className={`${hourTemp <= 0 ? 'text-dark' : 'text-white'} w-12 h-12`} 
+                      className={`${textColor} w-12 h-12`} 
                       aria-label="weather icon"
                       data-testid={`${period}-icon`}
                     />
                   ) : (
-                    <Globe  className={`${hourTemp <= 0 ? 'text-dark' : 'text-white'} w-12 h-12`} 
+                    <Globe  className={`${textColor} w-12 h-12`} 
                       aria-label="weather icon"
                       data-testid={`${period}-icon`}/>
                   )}
