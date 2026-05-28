@@ -12,20 +12,20 @@ export const getWeather = async (city: string): Promise<WeatherData | null> => {
     });
 
     if (!res.ok) {
-      console.error(`Erro na resposta da API para cidade: ${city} - Status: ${res.status}`);
+      console.error(`Error in API response for city: ${city} - Status: ${res.status}`);
       return null;
     }
 
     const data = await res.json();
 
     if (!data?.location || !data?.current) {
-      console.warn(`Dados incompletos para a cidade: ${city}`);
+      console.warn(`Incomplete data for city: ${city}`);
       return null;
     }
 
     return data as WeatherData;
   } catch (error) {
-    console.error(`Erro ao buscar dados do clima para ${city}:`, error);
+    console.error(`Error fetching weather data for ${city}:`, error);
     return null;
   }
 };

@@ -15,7 +15,7 @@ export default async function CityPage({ params }: Props) {
       return (
         <main className="min-h-screen flex items-center justify-center" data-testid="not-found-container">
           <h1 className="text-2xl font-bold" data-testid="not-found-message">
-            Cidade não encontrada
+            City not found
           </h1>
         </main>
       );
