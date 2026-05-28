@@ -242,7 +242,7 @@ export default function WeatherClient({ initialWeather }: { initialWeather?: Wea
             data-testid="wind-speed"
           > 
             <p className='font-extralight'>Wind speed: </p>
-            <p className='font-extralight'>{weatherData.current.wind_mph} m/h</p>
+            <p className='font-extralight'>{(weatherData.current.wind_kph / 3.6).toFixed(2)} m/s</p>
           </div>
 
           <Line aria-label="weather icon"/>
