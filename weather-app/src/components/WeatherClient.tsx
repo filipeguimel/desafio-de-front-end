@@ -241,39 +241,42 @@ export default function WeatherClient({ initialWeather }: { initialWeather?: Wea
             className='flex flex-col items-center justify-center w-28.8 md:w-33 left-2'
             data-testid="wind-speed"
           > 
-            <p className='font-extralight'>Wind speed: </p>
+            <p className='font-extralight'>Wind speed </p>
             <p className='font-extralight'>{(weatherData.current.wind_kph / 3.6).toFixed(2)} m/s</p>
-          </div>
-
-          <Line aria-label="weather icon"/>
-
-          <div 
-            className='flex flex-col items-center justify-center w-27.5'
-            data-testid="humidity"
-          >
-            <p className='font-extralight'>Humidity: </p>
-            <p className='font-extralight'>{weatherData.current.humidity}%</p>
-          </div>
-
-          <Line className='hidden sm:hidden md:block' aria-label="weather icon"/>
-
-          <div 
-            className='flex flex-col items-center justify-center w-27.5'
-            data-testid="sunrise"
-          >
-            <p className='font-extralight'>Sunrise: </p>
-            <p className='font-extralight'>{weatherData.forecast.forecastday[0].astro.sunrise}</p>
           </div>
 
           <Line aria-label="weather icon"/>
           
           <div 
             className='flex flex-col items-center justify-center w-27.5'
+            data-testid="sunrise"
+          >
+            <p className='font-extralight'>Sunrise </p>
+            <p className='font-extralight'>{weatherData.forecast.forecastday[0].astro.sunrise}</p>
+          </div>
+        
+
+          <Line className='hidden sm:hidden md:block' aria-label="weather icon"/>
+
+          <div 
+            className='flex flex-col items-center justify-center w-27.5'
             data-testid="sunset"
           >
-            <p className='font-extralight'>Sunset: </p>
+            <p className='font-extralight'>Sunset </p>
             <p className='font-extralight'>{weatherData.forecast.forecastday[0].astro.sunset}</p>
           </div>
+
+          <Line aria-label="weather icon"/>
+          
+          
+          <div 
+            className='flex flex-col items-center justify-center w-27.5'
+            data-testid="humidity"
+          >
+            <p className='font-extralight'>Humidity </p>
+            <p className='font-extralight'>{weatherData.current.humidity}%</p>
+          </div>
+
         </div>
       </div>
     </div>
