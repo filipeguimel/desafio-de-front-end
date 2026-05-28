@@ -3,10 +3,14 @@
 ## Descrição do Projeto
 Esta aplicação é uma plataforma de monitoramento meteorológico desenvolvida como resposta ao desafio técnico de front-end. O sistema permite a listagem de cidades predefinidas e a visualização detalhada de suas condições climáticas em tempo real, consumindo dados de uma API meteorológica externa. O projeto foi projetado com foco em alta fidelidade de layout, design responsivo multi-breakpoint e rigorosa cobertura de testes unitários.
 
+<img width="1920" height="1080" alt="Screenshot 2026-05-28 071147" src="https://github.com/user-attachments/assets/e6b095be-71bc-435a-8859-06b9d00da763" />
+
 ## Demonstração e Hospedagem
 A aplicação foi submetida ao pipeline de implantação contínua e está disponível publicamente.
-* **Link de Produção:** [Acesse a aplicação na Vercel](https://vercel.app)
+* **Link de Produção:** [Acesse a aplicação na Vercel](https://desafio-de-front-end-xi.vercel.app/)
 * **Design de Referência:** [Figma Layout](https://www.figma.com/design/4lcFZPwbuAxjBiUutFK9Qd)
+
+https://github.com/user-attachments/assets/6ca6db02-06fc-489c-96c9-156f3e0ee978
 
 ---
 
@@ -18,6 +22,8 @@ A pilha de tecnologia foi selecionada para garantir escalabilidade, performance 
 * **Estilização:** Tailwind CSS para consistência de design e responsividade fluida
 * **Gerenciamento de Estado:** Zustand para uma store leve e desacoplada dos componentes de interface
 * **Ambiente Isolado:** Docker e Docker Compose para padronização do ambiente de desenvolvimento e produção
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-28 034410" src="https://github.com/user-attachments/assets/14cb9998-d61d-47f6-99e4-2e3c2aefe17a" />
 
 ---
 
@@ -55,10 +61,12 @@ Para rodar a suite de testes localmente com o relatório de cobertura:
 npm run test -- --coverage 
 ```
 
+<img width="549" height="925" alt="Screenshot 2026-05-28 032357" src="https://github.com/user-attachments/assets/80eb1ed6-f76f-4802-9b3e-8866a84390ef" />
+
 ## Instruções de Execução
 ### Pré-requisitos
 * Node.js version: 22.21.1 | Versão recomendada: 20 ou superior
-* Docker version: 27.3.1 | Versão recomendada:27 ou superior (opcional: execução em container)
+* Docker version: 27.3.1 | Versão recomendada: 27 ou superior (opcional: execução em container)
 * API Key válida na Weather API (necessária criação de conta)
 
 ### Opção 1: Execução Nativa (Desenvolvimento)
@@ -79,3 +87,4 @@ npm run dev
 docker compose up
 ```
 2. Acesse a aplicação em http://localhost:3000
+
